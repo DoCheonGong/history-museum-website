@@ -1,0 +1,438 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+#wrap {
+    width: 100%;
+    position: relative;
+}
+
+#popupBg {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: #0005;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+#popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 420px;
+    background-color: #fff;
+    border: 1px solid #e9e9e9;
+    box-shadow: 0px 0px 10px 1px #0002;
+    border-radius: 13px;
+    z-index: 100;
+}
+
+#popup h2 {
+    font: bold 18px/1.5 "돋움";
+    padding: 18px 20px;
+    border-bottom: 1px solid #e9e9e9;
+    text-align: center;
+}
+
+#popup span {
+    display: block;
+    font: bold 15px/1.3 "돋움";
+    color: brown;
+    padding: 10px 20px;
+}
+
+#popup p {
+    font: bold 12px/1.3 "돋움";
+    color: #666;
+    padding: 0px 20px 10px;
+}
+
+#popup #close {
+    display: block;
+    outline: none;
+    border: none;
+    font: bold 13px/1 "돋움";
+    background-color: #0001;
+    margin: 10px auto;
+    padding: 10px 15px;
+    border-radius: 10px;
+    width: 95%;
+    cursor: pointer;
+}
+
+main {
+    display: flex;
+    width: 100%;
+    height: 800px;
+}
+
+header {
+    width: 200px;
+    height: 100%;
+}
+
+header h1 {
+    width: 100%;
+    height: 130px;
+    background-color: #eee;
+}
+
+header h1>a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header #gnb {
+    width: 90%;
+    margin: 0 auto;
+    border: 2px solid #e9e9e9;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+header #gnb>li {
+    width: 100%;
+}
+
+header #gnb>li>a {
+    display: block;
+    text-align: center;
+    font: bold 16px/1 "돋움";
+    padding: 13px 0;
+}
+
+header #gnb>li:hover>a {
+    background-color: #333;
+    color: #fff;
+}
+
+
+.sub {
+    display: none;
+}
+
+.sub>li {
+    width: 100%;
+}
+
+.sub>li>a {
+    display: block;
+    text-align: center;
+    font: 14px/1 "돋움";
+    padding: 10px 0;
+}
+
+.sub>li>a:hover {
+    background-color: #0002;
+}
+
+/* contentBox */
+#contentBox {
+    width: 400px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#notice,
+#gallery {
+    position: relative;
+    margin: 30px 10px;
+    border: 2px solid #e9e9e9;
+    border-radius: 10px;
+    transition: 0.1s;
+}
+
+#shortcut {
+    position: relative;
+    margin: 10px 0;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 2px solid #e9e9e9;
+    transition: 0.1s;
+}
+
+#notice:hover,
+#gallery:hover,
+#shortcut:hover {
+    border: 2px solid #fd9800;
+}
+
+#notice>a,
+#gallery>a,
+#shortcut>a {
+    position: absolute;
+    top: -20px;
+    left: -2px;
+    display: block;
+    width: 100px;
+    text-align: center;
+    font: bold 14px/1 "돋움";
+    padding: 8px 0;
+    background-color: #e9e9e9;
+    border: 2px solid #e9e9e9;
+    border-radius: 30px 30px 30px 0px;
+    transition: 0.1s;
+}
+
+#notice:hover>a,
+#gallery:hover>a,
+#shortcut:hover>a {
+    background-color: #fd9800;
+    border: 2px solid #fd9800;
+    color: #fff;
+}
+
+#notice>ul {
+    margin-top: 15px;
+    padding: 10px 0;
+}
+
+#notice>ul>li {
+    width: 95%;
+    margin: 0 auto;
+    padding: 12px 10px;
+    /* border-bottom: 1px solid #fff; */
+    display: flex;
+    justify-content: space-between;
+}
+
+#notice>ul>li:nth-of-type(odd) {
+    background-color: #e9e9e9;
+    border-radius: 30px 30px 0px 0px;
+}
+
+#notice>ul>li:nth-of-type(even) {
+    background-color: #f9f9f9;
+    border-radius: 0px 0px 30px 30px;
+}
+
+#notice>ul>li:hover {
+    background-color: #ccc;
+}
+
+#notice>ul>li>a {
+    width: 70%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font: 14px/1 "돋움";
+}
+
+#notice>ul>li>span {
+    font: 12px/1 "돋움";
+}
+
+#gallery .photo {
+    width: 100%;
+    height: 180px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#gallery .photo>a {
+    display: block;
+    width: 120px;
+    height: 80px;
+    border-radius: 15px 15px 0px 0;
+}
+
+#gallery .photo a:nth-of-type(1) {
+    background: url(./images/gallery1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 120px;
+}
+
+#gallery .photo a:nth-of-type(2) {
+    background: url(./images/gallery2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 120px;
+}
+
+#gallery .photo>a span {
+    display: block;
+    width: 120px;
+    position: absolute;
+    top: 128px;
+    font: bold 14px/2.5 "돋움";
+    text-align: center;
+    border-radius: 0px 0px 20px 0px;
+    transition: 0.2s;
+}
+
+#gallery .photo>a:hover span {
+    background-color: #e9e9e9;
+}
+
+#shortcut #icon {
+    margin-top: 10px;
+    width: 100%;
+    height: 130px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#shortcut #icon>a {
+    display: block;
+    width: 100px;
+    height: 90px;
+    padding: 15px 0;
+    margin: 0 5px;
+    padding: 15px auto;
+    text-align: center;
+    transition: 0.2s;
+    border-radius: 20px 20px 0px 0px;
+}
+
+#shortcut #icon>a:nth-of-type(1) {
+    background: url(./images/sns_icon.png);
+    background-position-x: 495px;
+    background-position-y: 325px;
+    background-size: 500px;
+}
+
+#shortcut #icon>a:nth-of-type(2) {
+    background: url(./images/sns_icon.png);
+    background-position-x: 175px;
+    background-position-y: 325px;
+    background-size: 500px;
+}
+
+#shortcut #icon>a:nth-of-type(3) {
+    background: url(./images/sns_icon.png);
+    background-position-x: 258px;
+    background-position-y: 325px;
+    background-size: 500px;
+}
+
+#shortcut #icon>a:nth-of-type(4) {
+    background: url(./images/sns_icon.png);
+    background-position-x: 338px;
+    background-position-y: 325px;
+    background-size: 500px;
+}
+
+#shortcut #icon>a:hover {
+    background-color: #e9e9e9;
+}
+
+#shortcut #icon>a>span {
+    display: block;
+    margin-top: 65px;
+    font: 13px/2 "돋움";
+    border-radius: 20px 20px 20px 0px;
+    transition: 0.2s;
+}
+
+#shortcut #icon>a:hover span {
+    background-color: #e9e9e9;
+}
+
+/* slide */
+#slide {
+    width: calc(100% - 200px - 400px);
+    height: 100%;
+    padding: 30px;
+}
+
+#slide #slideBox {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px 20px 20px 0px;
+}
+
+.frame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.frame>li {
+    width: 100%;
+    height: 100%;
+}
+
+.frame>li>img {
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
+}
+
+/* footer */
+footer {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    border-top: 2px solid #e9e9e9;
+}
+
+footer>h2 {
+    width: 200px;
+    height: 100%;
+}
+
+footer>h2>a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer>h2>a>img {
+    width: 120px;
+}
+
+.copyright {
+    width: calc(100% - 530px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.copyright span {
+    font: 15px/1.5 "돋움";
+}
+
+.family {
+    width: 300px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.family select {
+    outline: none;
+    width: 75%;
+    margin: 0 auto;
+    padding: 5px 10px;
+    font: bold 14px/1 "돋움";
+}
